@@ -2,7 +2,7 @@ import telebot
 import os
 from flask import Flask, request
 
-bot = telebot.TeleBot('<api_token>')
+bot = telebot.TeleBot('427664928:AAFo8XppiVi6PJJi_w_3ZN5UGLBYudInYBk')
 
 server = Flask(__name__)
 
@@ -22,7 +22,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://herokuProject_url/bot")
+    bot.set_webhook(url="https://warm-mesa-34035.herokuapp.com/bot")
     return "!", 200
 
 server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
